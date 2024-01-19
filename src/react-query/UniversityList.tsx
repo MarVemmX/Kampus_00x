@@ -3,9 +3,11 @@ import useUniversity from "./hooks/useUniversity";
 import { useState } from "react";
 
 interface Location {
-  [key: string]: {
-    [id: string]: string;
-  };
+  [key: string]:
+    | {
+        [id: string | number]: string;
+      }
+    | undefined;
 }
 
 const UniversityList = () => {
@@ -22,7 +24,8 @@ const UniversityList = () => {
     (location: Location) => Object.keys(location)[0] === selectedLocation
   );
   const universities: { [id: string]: string } = selectedLocationData
-    ? selectedLocationData?.[selectedLocation as keyof Location]
+    ? // @ts-ignore
+      selectedLocationData?.[selectedLocation as keyof Location]
     : {};
 
   return (
