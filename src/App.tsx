@@ -1,16 +1,13 @@
-// import {
-//   createBrowserRouter,
-//   Route,
-//   NavLink,
-//   createRoutesFromElements,
-//   RouterProvider,
-// } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Route,
+  NavLink,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
+import Register from "./Pages/registerPage";
 
-// //pages
-// import Home from "./Pages/home";
-// import ItemsSale from "./Pages/ItemsSale";
-// import Profile from "./Pages/profile";
-// import RootLayout from "./Layouts/RootLayout";
+//pages
 
 // const router = createBrowserRouter(
 //   createRoutesFromElements(
@@ -21,12 +18,13 @@
 //     </Route>
 //   )
 // );
-// function App() {
-//   return (
-//     <>
-//       <RouterProvider router={router} />
-//     </>
-//   );
-// }
+function App() {
+  return (
+    <Register></Register>
+    // <>
+    //   <RouterProvider router={router} />
+    // </>
+  );
+}
 
-// export default App;
+export default App;

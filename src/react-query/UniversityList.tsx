@@ -10,32 +10,53 @@ interface Location {
     | undefined;
 }
 
-const UniversityList = () => {
+interface UniversityListProps {
+  onUniversityChange: (value: string) => void;
+  onLocationChange: (value: string) => void;
+}
+
+const UniversityList: React.FC<UniversityListProps> = ({
+  onUniversityChange,
+  onLocationChange,
+}) => {
   const [selectedLocation, setSelectedLocation] = useState<string>("");
   const { data } = useUniversity(0);
 
   const handleLocationChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
+    const locationValue = event.target.value;
     setSelectedLocation(event.target.value);
+    onUniversityChange(""); // Reset selected university when location changes
+    onLocationChange(locationValue);
+  };
+
+  const handleUniversityChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    onUniversityChange(event.target.value);
   };
 
   const selectedLocationData = data.find(
     (location: Location) => Object.keys(location)[0] === selectedLocation
   );
   const universities: { [id: string]: string } = selectedLocationData
-    ? // @ts-ignore
+    ? //@ts-ignore
       selectedLocationData?.[selectedLocation as keyof Location]
     : {};
 
   return (
-    <VStack>
+    <VStack pb={4}>
       <Select
-        w="85vw"
-        px={2.5}
+        background="rgba(255, 119, 0, 0.15)"
+        h={16}
+        border="none"
+        borderRadius="8px"
+        focusBorderColor="rgba(255, 119, 0, 0.5 )"
+        mb={4}
         onChange={handleLocationChange}
         value={selectedLocation}
-        placeholder="Select Location"
+        placeholder="State"
         id="locations"
       >
         {data &&
@@ -48,7 +69,15 @@ const UniversityList = () => {
             );
           })}
       </Select>
-      <Select w="85vw" px={2.5} placeholder="Select Campus">
+      <Select
+        background="rgba(255, 119, 0, 0.15)"
+        h={16}
+        border="none"
+        borderRadius="8px"
+        focusBorderColor="rgba(255, 119, 0, 0.5 )"
+        placeholder="University"
+        onChange={handleUniversityChange}
+      >
         {Object.entries(universities).map(([id, name]) => (
           <option key={id} value={name}>
             {name}
