@@ -1,26 +1,35 @@
-import { Box, HStack, Text } from "@chakra-ui/react";
+import { Box, HStack, Text, Image } from "@chakra-ui/react";
 import RegisterForm from "../forms/registerForm";
 import { IoChevronBackOutline } from "react-icons/io5";
+import photo from "../assets/regImage.png";
 
 const Register = () => {
   return (
-    <HStack>
-      <Box>
+    <Box
+      width={{ base: "100vw", md: "100vw", lg: "100vw", xl: "100vw" }}
+      height={{ base: "60vh", md: "100vh", lg: "70vh", xl: "70vh" }}
+    >
+      <HStack>
         <Box>
-          <IoChevronBackOutline fontSize="35px" />
-          <Text fontSize="10px"> Welcome to </Text>
-          KAMPUS LOGO
+          <Box>
+            <IoChevronBackOutline fontSize="35px" />
+            <Text fontSize="10px"> Welcome to </Text>
+            KAMPUS LOGO
+          </Box>
+          <Text>Create an Account</Text>
+          <RegisterForm />
         </Box>
-        <Text>Create an Account</Text>
-        <RegisterForm />
-      </Box>
-      <Box
-        width="600px"
-        height="650px"
-        backgroundColor="whiteAlpha.200"
-        border="2px solid #ff7700"
-      ></Box>
-    </HStack>
+        <Image
+          ml="-5%"
+          mt="10vh"
+          pt="0vh"
+          src={photo}
+          display={{ base: "none", md: "none", lg: "block", xl: "block" }}
+          width={{ lg: "50%", xl: "80vw" }}
+          height={{ lg: "70vh", xl: "80vh" }}
+        ></Image>
+      </HStack>
+    </Box>
   );
 };
 

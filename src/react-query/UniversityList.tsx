@@ -1,4 +1,4 @@
-import { HStack, Select, VStack } from "@chakra-ui/react";
+import { Flex, HStack, Select, VStack } from "@chakra-ui/react";
 import useUniversity from "./hooks/useUniversity";
 import { useState } from "react";
 
@@ -46,9 +46,9 @@ const UniversityList: React.FC<UniversityListProps> = ({
     : {};
 
   return (
-    <VStack pb={4}>
+    <Flex flexDirection="column" mb={2}>
       <Select
-        background="rgba(255, 119, 0, 0.15)"
+        background="rgba(255, 119, 0, 0.12)"
         h={16}
         border="none"
         borderRadius="8px"
@@ -70,7 +70,7 @@ const UniversityList: React.FC<UniversityListProps> = ({
           })}
       </Select>
       <Select
-        background="rgba(255, 119, 0, 0.15)"
+        background="rgba(255, 119, 0, 0.12)"
         h={16}
         border="none"
         borderRadius="8px"
@@ -84,7 +84,7 @@ const UniversityList: React.FC<UniversityListProps> = ({
           </option>
         ))}
       </Select>
-    </VStack>
+    </Flex>
   );
 };
 

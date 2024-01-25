@@ -1,180 +1,3 @@
-// import { z } from "zod";
-// import { useForm, FieldValues } from "react-hook-form";
-// import { zodResolver } from "@hookform/resolvers/zod";
-// import { useRef } from "react";
-// import {
-//   Text,
-//   Box,
-//   Flex,
-//   Input,
-//   Button,
-//   ButtonGroup,
-//   HStack,
-//   Radio,
-//   RadioGroup,
-//   Stack,
-//   background,
-//   InputGroup,
-//   InputRightElement,
-// } from "@chakra-ui/react";
-// // import RegToast from "./RegToast";
-// import UniversityList from "../react-query/UniversityList";
-// import { useState } from "react";
-// import PasswordInput from "../components/passwordCompnent";
-
-// const schema = z.object({
-//   name: z
-//     .string({ invalid_type_error: "Please enter your name" })
-//     .min(2, { message: "Your name is too short" }),
-//   age: z
-//     .string({ invalid_type_error: "WELP, Age??" })
-//     .min(18, { message: "NO MINORS ALLOWED" }),
-//   email: z
-//     .string()
-//     .email({ message: "Invalid email format" })
-//     .refine((value) => value.endsWith(".edu.ng"), {
-//       message: "Only students are allowed. Use your .edu.ng email to register",
-//     }),
-//   password: z
-//     .string()
-//     .min(8, { message: "Too Short, 8 Minimum" })
-//     .regex(/[A-Z]+/, { message: "Capital character missing" })
-//     .regex(/[a-z]+/, { message: "Lowercase character missing" })
-//     .regex(/[0-9]+/, { message: "Number missing" })
-//     .regex(/[@#$%^&*()_+\-=\/~]+/, { message: "Special character missing" }),
-// });
-// type FormData = z.infer<typeof schema>;
-
-// const RegisterForm = () => {
-//   const formRef = useRef();
-//   const {
-//     register,
-//     handleSubmit,
-//     formState: { errors, isSubmitSuccessful },
-//   } = useForm<FormData>({ resolver: zodResolver(schema) });
-//   const onSubmit = (data: FieldValues) => {
-//     console.log("good to see you work");
-//     console.log(data);
-//   };
-//   return (
-//     <Box>
-//       <form onSubmit={handleSubmit(onSubmit)}>
-//         <Flex align="center" flexDirection="column" gap={3} p="10px">
-//           <Input
-//             background="rgba(255, 119, 0, 0.3)"
-//             h={12}
-//             border="1px solid rgba(255, 119, 0, 0.2)"
-//             focusBorderColor="rgba(255, 119, 0, 0.5 )"
-//             {...register("name")}
-//             type="text"
-//             placeholder="Full Name:"
-//           />
-//           {errors.name && (
-//             <Text fontSize="sm" color="red.400">
-//               {errors.name.message}
-//             </Text>
-//           )}
-//           <Input
-//             background="rgba(255, 119, 0, 0.3)"
-//             h={12}
-//             border="1px solid rgba(255, 119, 0, 0.2)"
-//             focusBorderColor="rgba(255, 119, 0, 0.5 )"
-//             {...register("email")}
-//             type="email"
-//             placeholder=" Students E-mail:"
-//           />
-//           {errors.email && (
-//             <Text fontSize="sm" color="red.400">
-//               {errors.email.message}
-//             </Text>
-//           )}
-//           {/* <UniversityList /> */}
-//           {/* <HStack>
-//             <Text>Age:</Text>
-//             <RadioGroup
-//               colorScheme="orange"
-//               defaultValue="1"
-//               {...register("age")}
-//             >
-//               <Radio value="1">Below 18</Radio>
-//               <Radio value="2">18-25</Radio>
-//               <Radio value="3">Above 25</Radio>
-//             </RadioGroup>
-//           </HStack> */}
-//           {/* <PasswordInput register={register} /> */}
-//           <Input
-//             {...register("password")}
-//             type="password"
-//             placeholder="Password Should be something you'd remember"
-//             background="rgba(255, 119, 0, 0.3)"
-//             h={12}
-//             border="1px solid rgba(255, 119, 0, 0.2)"
-//             focusBorderColor="rgba(255, 119, 0, 0.5 )"
-//           />
-//           {errors.password && (
-//             <Text textAlign="center" ml={2} fontSize="sm" color="red.400">
-//               {errors.password.message}
-//             </Text>
-//           )}
-//           <HStack>
-//             <Box
-//               type="submit"
-//               as="button"
-//               width="180px"
-//               height="50px"
-//               borderRadius="50px"
-//               background="#ff7700"
-//               boxShadow="0 20px 30px -6px rgba(255, 119, 0, 0.5)"
-//               outline="none"
-//               cursor="pointer"
-//               border="none"
-//               fontSize="24px"
-//               color="white"
-//               transition="all 0.3s ease-in-out"
-//               fontFamily="'Mena Grotesk', sans-serif"
-//               _hover={{
-//                 transform: "translateY(3px)",
-//                 boxShadow: "none",
-//               }}
-//               _active={{
-//                 opacity: 0.5,
-//               }}
-//               onClick={(e) => {
-//                 e.preventDefault();
-//                 handleSubmit(onSubmit)();
-//               }}
-//             >
-//               <Text fontSize="12px">Sign Up</Text>
-//             </Box>
-//             {/* <button
-//               type="submit"
-//               // onClick={onSubmit}
-//               style={{
-//                 color: "white",
-//                 padding: "10px 20px",
-//                 background: "slateblue",
-//                 borderRadius: "5px",
-//               }}
-//             >
-//               Sign Up
-//             </button> */}
-//             <HStack>
-//               <Text>Already Have an account? </Text>
-//               <Button variant="unstyled" color="#ff7700">
-//                 Login
-//               </Button>
-//             </HStack>
-//           </HStack>
-//           {/* {isSubmitSuccessful && <RegToast />} */}
-//         </Flex>
-//       </form>
-//     </Box>
-//   );
-// };
-
-// export default RegisterForm;
-
-// RegForm.tsx
 import { z } from "zod";
 import { useForm, FieldValues } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -248,15 +71,20 @@ const RegForm = () => {
   };
 
   return (
-    <Box>
+    <Box
+      pl="10vw"
+      pr="10vw"
+      width={{ base: "100vw", md: "100vw", lg: "70vw", xl: "65vw" }}
+      height={{ base: "80vh", md: "80vh", lg: "100vh", xl: "70vh" }}
+    >
       <Text textTransform="uppercase" fontWeight="bold" textAlign="center">
         {" "}
         Sign Up{" "}
       </Text>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Flex align="center" flexDirection="column" gap={3} p="10px">
+        <Flex flexDirection="column" gap={3} p="10px">
           <Input
-            background="rgba(255, 119, 0, 0.15)"
+            background="rgba(255, 119, 0, 0.12)"
             h={16}
             border="none"
             borderRadius="8px"
@@ -268,7 +96,7 @@ const RegForm = () => {
             placeholder="Full Name"
           />
           {errors.name && (
-            <Text fontSize="sm" color="red.400">
+            <Text textAlign="center" fontSize="sm" color="red.400">
               {errors.name.message}
             </Text>
           )}
@@ -277,6 +105,9 @@ const RegForm = () => {
             onLocationChange={handleLocationChange}
             onUniversityChange={(value) => setValue("university", value)}
           />
+          <Text textAlign="center" fontSize="sm" color="red.400">
+            {errors.university?.message}
+          </Text>
           {/* <Input
             {...register("age", { valueAsNumber: true })}
             type="number"
@@ -289,7 +120,7 @@ const RegForm = () => {
           )} */}
 
           <Input
-            background="rgba(255, 119, 0, 0.15)"
+            background="rgba(255, 119, 0, 0.12)"
             h={16}
             border="none"
             borderRadius="8px"
@@ -301,27 +132,81 @@ const RegForm = () => {
             placeholder=" Student Email Address"
           />
           {errors.email && (
-            <Text fontFamily="Cordana" fontSize="sm" color="red.400">
+            <Text textAlign="center" fontSize="sm" color="red.400">
               {errors.email.message}
             </Text>
           )}
           <HStack>
-            <Text>Age:</Text>
+            <Text
+              fontSize={{
+                base: "12px",
+                md: "17px",
+                lg: "22px",
+                xl: "22px",
+              }}
+              pl={{ base: "20px", md: "30px", lg: "4em", xl: "3em" }}
+              fontWeight={"bold"}
+            >
+              Age:
+            </Text>
             <RadioGroup
               colorScheme="orange"
+              alignItems={{
+                base: "center",
+                md: "normal",
+                lg: "normal",
+                xl: "normal",
+              }}
               defaultValue=""
               onChange={(value) => setValue("age", value)}
             >
               <Stack spacing={4} direction="row">
-                <Radio value="below18">Below 18</Radio>
-                <Radio value="18to25">18-25</Radio>
-                <Radio value="above25">Above 25</Radio>
+                <Radio value="below18">
+                  <Text
+                    fontSize={{
+                      base: "10px",
+                      md: "15px",
+                      lg: "20px",
+                      xl: "20px",
+                    }}
+                  >
+                    Below 18
+                  </Text>
+                </Radio>
+                <Radio value="18to25">
+                  {" "}
+                  <Text
+                    fontSize={{
+                      base: "10px",
+                      md: "15px",
+                      lg: "20px",
+                      xl: "20px",
+                    }}
+                  >
+                    18-25
+                  </Text>
+                </Radio>
+                <Radio value="above25">
+                  {" "}
+                  <Text
+                    fontSize={{
+                      base: "10px",
+                      md: "15px",
+                      lg: "20px",
+                      xl: "20px",
+                    }}
+                  >
+                    Above 25
+                  </Text>
+                </Radio>
+                {/* <Text textAlign="center" fontSize="sm" color="red.400">
+                  {errors.age?.message}
+                </Text> */}
               </Stack>
             </RadioGroup>
-            <Text>{errors.age?.message}</Text>
           </HStack>
           <Input
-            background="rgba(255, 119, 0, 0.15)"
+            background="rgba(255, 119, 0, 0.12)"
             h={16}
             border="none"
             borderRadius="8px"
@@ -338,13 +223,25 @@ const RegForm = () => {
             </Text>
           )}
 
-          <Text>{errors.university?.message}</Text>
-
-          <HStack gap="3em">
+          <Flex
+            flexDirection={{
+              base: "column",
+              md: "row",
+              lg: "row",
+              xl: "row",
+            }}
+            gap={{
+              base: "2em",
+              md: "4em",
+              lg: "4em",
+              xl: "3em",
+            }}
+            alignItems="center"
+          >
             <Button
               type="submit"
-              width="220px"
-              height="60px"
+              width="225px"
+              height="64px"
               borderRadius="50px"
               background="#ff7700"
               boxShadow="0 20px 30px -6px rgba(255, 119, 0, 0.5)"
@@ -365,12 +262,27 @@ const RegForm = () => {
             >
               <Text fontSize="15px">Sign Up</Text>
             </Button>
-            <HStack>
-              <Text fontSize="20px" fontWeight="bold">
+            <HStack
+              gap={{
+                base: "5px",
+                md: "1em",
+                lg: "10px",
+                xl: "10px",
+              }}
+            >
+              <Text
+                fontSize={{
+                  base: "15px",
+                  md: "20px",
+                  lg: "18px",
+                  xl: "18px",
+                }}
+                fontWeight="bold"
+              >
                 Already have an account?
               </Text>
               <Button
-                fontSize="20px"
+                fontSize="18px"
                 fontWeight="bold"
                 color="#ff7700"
                 variant="unstyled"
@@ -378,7 +290,7 @@ const RegForm = () => {
                 Login
               </Button>
             </HStack>
-          </HStack>
+          </Flex>
           {/* {isSubmitSuccessful && <RegToast />} */}
         </Flex>
       </form>
