@@ -1,13 +1,13 @@
 import { Box, HStack, Text, Image, Flex, Button } from "@chakra-ui/react";
-import RegisterForm from "../forms/registerForm";
 import { IoChevronBackOutline } from "react-icons/io5";
-import photo from "../assets/regImage.png";
+import photo from "../assets/logImage.png";
+import LoginForm from "../forms/loginForm";
 
-const Register = () => {
+const Login = () => {
   return (
     <Box
       width={{ base: "100vw", md: "100vw", lg: "100vw", xl: "100vw" }}
-      height={{ base: "60vh", md: "100vh", lg: "70vh", xl: "70vh" }}
+      height={{ base: "60vh", md: "100vh", lg: "100%", xl: "70vh" }}
     >
       <HStack>
         <Box>
@@ -21,31 +21,33 @@ const Register = () => {
             flexDir="column"
           >
             <Box>
-              <HStack gap="none">
-                <Text fontSize="10px"> Welcome to </Text>
+              <HStack gap="8px">
+                <Text fontSize="10px"> Login to your </Text>
                 <Text fontStyle="italic" color="#ff7700">
                   Kampus!
                 </Text>
+                <Text fontSize="10px"> account </Text>
               </HStack>
             </Box>
             <Text fontSize="2xl" fontWeight="extrabold">
-              Create an Account
+              Welcome Back
             </Text>
           </Flex>
-          <RegisterForm />
+          <LoginForm />
         </Box>
         <Image
           ml="-5%"
-          mt="10vh"
+          mt={{ lg: "-10vh", xl: "5vh" }}
           pt="0vh"
+          pb="10vh"
           src={photo}
           display={{ base: "none", md: "none", lg: "block", xl: "block" }}
-          width={{ lg: "50%", xl: "80vw" }}
-          height={{ lg: "70vh", xl: "80vh" }}
+          width={{ lg: "40vw", xl: "40vw" }}
+          height={{ lg: "90vh", xl: "95vh" }}
         ></Image>
       </HStack>
     </Box>
   );
 };
 
-export default Register;
+export default Login;

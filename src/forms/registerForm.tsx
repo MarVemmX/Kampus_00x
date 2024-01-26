@@ -77,10 +77,6 @@ const RegForm = () => {
       width={{ base: "100vw", md: "100vw", lg: "70vw", xl: "65vw" }}
       height={{ base: "80vh", md: "80vh", lg: "100vh", xl: "70vh" }}
     >
-      <Text textTransform="uppercase" fontWeight="bold" textAlign="center">
-        {" "}
-        Sign Up{" "}
-      </Text>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Flex flexDirection="column" gap={3} p="10px">
           <Input

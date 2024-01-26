@@ -6,6 +6,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Register from "./Pages/registerPage";
+import Login from "./Pages/loginPage";
+import ForgotPassword from "./Pages/forgotPasswordPage";
 
 //pages
 
@@ -20,7 +22,12 @@ import Register from "./Pages/registerPage";
 // );
 function App() {
   return (
-    <Register></Register>
+    <>
+      {/* <Register />
+      <Login /> */}
+      <ForgotPassword />
+    </>
+
     // <>
     //   <RouterProvider router={router} />
     // </>
