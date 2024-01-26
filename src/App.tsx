@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Register from "./Pages/registerPage";
 import Login from "./Pages/loginPage";
-import ForgotPassword from "./Pages/forgotPasswordPage";
+import ResetPassword from "./Pages/resetPasswordPage";
 
 //pages
 
@@ -25,7 +25,7 @@ function App() {
     <>
       {/* <Register />
       <Login /> */}
-      <ForgotPassword />
+      <ResetPassword />
     </>
 
     // <>
