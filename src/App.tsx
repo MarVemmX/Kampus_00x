@@ -8,6 +8,8 @@ import {
 import Register from "./Pages/registerPage";
 import Login from "./Pages/loginPage";
 import ResetPassword from "./Pages/resetPasswordPage";
+import NavBar from "./components/NavBar";
+import HomePage from "./Pages/homePage";
 
 //pages
 
@@ -25,7 +27,8 @@ function App() {
     <>
       {/* <Register />
       <Login /> */}
-      <ResetPassword />
+      {/* <ResetPassword /> */}
+      <HomePage />
     </>
 
     // <>

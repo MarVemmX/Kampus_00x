@@ -26,21 +26,16 @@ const NavBar: React.FC<NavBarProps> = (props) => {
   return (
     <NavBarContainer {...props}>
       <Flex
-        pl="5vw"
         direction={{ base: "row", md: "row", lg: "row", xl: "row" }}
         align={{ base: "center", md: "center", lg: "", xl: "" }}
         justify="space-between"
         w="100%"
         height="100%"
-        bg="rgba(255, 255, 255, 0.3)"
-        // Adjust the blur value
-        zIndex={999}
+        background="#ff7700"
       >
         {/* LOGO appears at the very top on mobile */}
         {isMobile ? (
-          <Box
-            pb="5vh" //pl={6}
-          >
+          <Box pb="5vh" pl={6}>
             <MenuLinks isOpen={isOpen} />
             {/* <Box position="relative" fontSize="xl" color="#ff7700">
               <Text>LOGO</Text>
@@ -55,11 +50,9 @@ const NavBar: React.FC<NavBarProps> = (props) => {
           // {Whatever is here displays on mobile and tablets only }
           <Flex w="100%" justifyContent="space-between" flexDirection="row">
             <Text
-              position="fixed"
-              zIndex="9999"
+              position="absolute"
               fontSize="xl"
               color="#ff7700"
-              mt="15px"
               mb={{ base: 2, md: 2 }}
             >
               {" "}
@@ -99,29 +92,13 @@ const MenuToggle: React.FC<MenuToggleProps> = ({ toggle, isOpen }) => {
     };
   }, [isOpen]);
   return (
-    <Box
-      zIndex="99999"
-      display={{ base: "block", md: "block" }}
-      onClick={toggle}
-    >
+    <Box display={{ base: "block", md: "block" }} onClick={toggle}>
       {isOpen ? (
-        <Text
-          mt="15px"
-          fontSize="35px"
-          left="85vw"
-          position="fixed"
-          color="#000"
-        >
+        <Text left="85vw" position="absolute" color="#000">
           <IoClose />
         </Text>
       ) : (
-        <Text
-          mt="15px"
-          fontSize="35px"
-          left="85vw"
-          position="fixed"
-          color="#000"
-        >
+        <Text left="85vw" position="absolute" color="#000">
           <RxHamburgerMenu />
         </Text>
       )}
@@ -158,14 +135,11 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ isOpen }) => {
         xl: "block",
       }}
       flexBasis={{ base: "100%", md: "100%", lg: "100%", xl: "100%" }}
-      height={{ base: "100vh", md: "100vh", lg: "8vh", xl: "8vh" }}
+      height={{ base: "100vh", md: "100vh", lg: "4vh", xl: "4vh" }}
       w="100%"
-
-      //   transition="transform 2s ease-in-out"
-      //   transform={{ base: isOpen ? "translateX(0)" : "translateX(100%)" }}
     >
       <Flex
-        mt={{ base: "15vh", md: "20vh", lg: "5vh", xl: "5vh" }}
+        mt={{ base: "15vh", md: "20vh", lg: "2vh", xl: "2vh" }}
         align=""
         justify={["center", "center", "space-around", "space-between"]}
         direction={["column", "column", "column", "row"]}
@@ -174,12 +148,12 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ isOpen }) => {
       >
         <Flex
           align={{ base: "center", md: "center", lg: "", xl: "" }}
-          pl=""
+          pl="6vw"
           gap={8}
           flexDirection={{ base: "column", md: "column", lg: "row", xl: "row" }}
         >
           {" "}
-          <Box as="a">
+          <MenuItem to="/">
             <Box
               position="relative"
               _after={{
@@ -204,8 +178,6 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ isOpen }) => {
             >
               <Text
                 as="a"
-                fontSize="20px"
-                fontWeight="bold"
                 color="#131313"
                 _active={{
                   "&:after": {
@@ -223,8 +195,8 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ isOpen }) => {
                 Home
               </Text>{" "}
             </Box>
-          </Box>
-          <Box as="a">
+          </MenuItem>
+          <MenuItem to="/">
             <Box
               position="relative"
               _after={{
@@ -248,10 +220,8 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ isOpen }) => {
               }}
             >
               <Text
-                as="a"
-                fontSize="20px"
-                fontWeight="bold"
                 color="#131313"
+                as="a"
                 _active={{
                   color: "#ff7700",
                   //   "&:after": {
@@ -269,8 +239,8 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ isOpen }) => {
                 Features
               </Text>{" "}
             </Box>
-          </Box>
-          <Box as="a">
+          </MenuItem>
+          <MenuItem to="/">
             <Box
               position="relative"
               _after={{
@@ -295,20 +265,17 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ isOpen }) => {
             >
               <HStack>
                 <Text
-                  fontSize="20px"
-                  fontWeight="bold"
                   color="#131313"
                   as="a"
                   _active={{
                     "&:after": {
-                      color: "#ff7700",
-                      //   content: '""',
-                      //   position: "absolute",
-                      //   width: "100%",
-                      //   height: "2px",
-                      //   bottom: "0",
-                      //   left: "0",
-                      //   backgroundColor: "#ff7700",
+                      content: '""',
+                      position: "absolute",
+                      width: "100%",
+                      height: "2px",
+                      bottom: "0",
+                      left: "0",
+                      backgroundColor: "#ff7700",
                     },
                   }}
                 >
@@ -318,20 +285,21 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ isOpen }) => {
                 <FaChevronDown color="#131313" />
               </HStack>
             </Box>
-          </Box>
+          </MenuItem>
         </Flex>
 
         <Text
           fontSize="40px"
-          color="#ff7700"
+          color="#ff77"
           display={{ base: "none", md: "none", lg: "block", xl: "block" }}
         >
           Kampus !
         </Text>
 
         <Flex
+          pl="6vw"
+          mt="20px"
           flexDirection={{ base: "column", md: "column", lg: "row", xl: "row" }}
-          mt={{ base: "20px", md: "20px", lg: "0", xl: "0" }}
           align={{ base: "center", md: "center", lg: "", xl: "" }}
           gap="20px"
         >
@@ -358,14 +326,7 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ isOpen }) => {
               opacity: 0.5,
             }}
           >
-            <Text
-              mt="1.5em"
-              textAlign="center"
-              justifyContent="center"
-              fontSize="15px"
-            >
-              Login
-            </Text>
+            <Text fontSize="15px">Login</Text>
           </Button>
           <Button
             display={{ base: "block", md: "block", lg: "block", xl: "block" }}
@@ -390,14 +351,7 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ isOpen }) => {
               opacity: 0.5,
             }}
           >
-            <Text
-              mt="1.5em"
-              textAlign="center"
-              justifyContent="center"
-              fontSize="15px"
-            >
-              Sign Up
-            </Text>
+            <Text fontSize="15px">Sign Up</Text>
           </Button>
         </Flex>
 
@@ -433,17 +387,6 @@ const NavBarContainer: React.FC<NavBarContainerProps> = ({
       wrap="wrap"
       w="100%"
       mb={2}
-      // Adjust the blur value
-      // zIndex={999}
-      // transformOrigin="bottom right"
-      // transition="transform 5s ease-out"
-      bg="rgba(255, 255, 255, 0.8)" // Adjust the alpha value for transparency
-      // backdropFilter="blur(8px)" // Adjust the blur value
-      position="fixed"
-      top={0}
-      left={0}
-      right={0}
-      zIndex={999}
       {...props}
     >
       {children}
