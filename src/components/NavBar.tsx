@@ -8,11 +8,13 @@ import {
   Stack,
   useMediaQuery,
   HStack,
+  Image,
 } from "@chakra-ui/react";
 import { FaChevronDown } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
-
+import KampusLogo from "../assets/KampusWhite.png";
+import KampusLogoBlack from "../assets/KampusBlack.png";
 interface NavBarProps {
   // Add any specific props needed for NavBar
 }
@@ -33,7 +35,6 @@ const NavBar: React.FC<NavBarProps> = (props) => {
         w="100%"
         height="100%"
         bg="rgba(255, 255, 255, 0.3)"
-        // Adjust the blur value
         zIndex={999}
       >
         {/* LOGO appears at the very top on mobile */}
@@ -54,7 +55,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
         ) : (
           // {Whatever is here displays on mobile and tablets only }
           <Flex w="100%" justifyContent="space-between" flexDirection="row">
-            <Text
+            {/* <Text
               position="fixed"
               zIndex="9999"
               fontSize="xl"
@@ -63,9 +64,25 @@ const NavBar: React.FC<NavBarProps> = (props) => {
               mb={{ base: 2, md: 2 }}
             >
               {" "}
-              {/*mobile view logo LOGOS*/}
+              {/*mobile view logo LOGOS
               KAMPUS !
-            </Text>
+            </Text> */}
+            <Box
+              w="100vw"
+              h={{ base: "10vh", md: "10vh" }}
+              pt="15px"
+              pl="15px"
+              ml="-5vw"
+              bgColor="rgba(255,255,255,0.4)"
+              position="fixed"
+              zIndex="9999"
+              fontSize="xl"
+              color="#ff7700"
+              //   mt="15px"
+              //   mb={{ base: 2, md: 2 }}
+            >
+              <Image w="120px" src={KampusLogo} />
+            </Box>
             <MenuToggle toggle={toggle} isOpen={isOpen} />
             <MenuLinks isOpen={isOpen} />
             {/* <MenuItem to="/signup" isLast>
@@ -208,15 +225,7 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ isOpen }) => {
                 fontWeight="bold"
                 color="#131313"
                 _active={{
-                  "&:after": {
-                    content: '""',
-                    position: "absolute",
-                    width: "100%",
-                    height: "2px",
-                    bottom: "0",
-                    left: "0",
-                    backgroundColor: "#ff7700",
-                  },
+                  color: "#ff7700",
                 }}
               >
                 {" "}
@@ -254,15 +263,6 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ isOpen }) => {
                 color="#131313"
                 _active={{
                   color: "#ff7700",
-                  //   "&:after": {
-                  //     content: '""',
-                  //     position: "absolute",
-                  //     width: "100%",
-                  //     height: "2px",
-                  //     bottom: "0",
-                  //     left: "0",
-                  //     backgroundColor: "#131313",
-                  //   },
                 }}
               >
                 {" "}
@@ -295,21 +295,12 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ isOpen }) => {
             >
               <HStack>
                 <Text
+                  as="a"
                   fontSize="20px"
                   fontWeight="bold"
                   color="#131313"
-                  as="a"
                   _active={{
-                    "&:after": {
-                      color: "#ff7700",
-                      //   content: '""',
-                      //   position: "absolute",
-                      //   width: "100%",
-                      //   height: "2px",
-                      //   bottom: "0",
-                      //   left: "0",
-                      //   backgroundColor: "#ff7700",
-                    },
+                    color: "#ff7700",
                   }}
                 >
                   {" "}
@@ -321,14 +312,18 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ isOpen }) => {
           </Box>
         </Flex>
 
-        <Text
+        {/* <Text
           fontSize="40px"
           color="#ff7700"
           display={{ base: "none", md: "none", lg: "block", xl: "block" }}
         >
           Kampus !
-        </Text>
-
+        </Text> */}
+        <Image
+          display={{ base: "none", md: "none", lg: "block", xl: "block" }}
+          cursor="pointer"
+          src={KampusLogoBlack}
+        />
         <Flex
           flexDirection={{ base: "column", md: "column", lg: "row", xl: "row" }}
           mt={{ base: "20px", md: "20px", lg: "0", xl: "0" }}
