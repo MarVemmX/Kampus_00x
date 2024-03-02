@@ -247,7 +247,7 @@ const RegForm = () => {
               fontSize="24px"
               color="white"
               transition="all 0.3s ease-in-out"
-              fontFamily="'Mena Grotesk', sans-serif"
+              fontFamily="MGRegular"
               _hover={{
                 transform: "translateY(3px)",
                 boxShadow: "none",

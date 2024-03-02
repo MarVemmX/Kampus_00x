@@ -6,8 +6,9 @@ import LoginForm from "../forms/loginForm";
 const Login = () => {
   return (
     <Box
+      mt={{ base: "10vh", md: "15vh", lg: "0", xl: "0" }}
       width={{ base: "100vw", md: "100vw", lg: "100vw", xl: "100vw" }}
-      height={{ base: "60vh", md: "100vh", lg: "100%", xl: "70vh" }}
+      height={{ base: "60vh", md: "60vh", lg: "100%", xl: "70vh" }}
     >
       <HStack>
         <Box>
@@ -21,9 +22,9 @@ const Login = () => {
             flexDir="column"
           >
             <Box>
-              <HStack gap="8px">
+              <HStack gap="2">
                 <Text fontSize="10px"> Login to your </Text>
-                <Text fontStyle="italic" color="#ff7700">
+                <Text fontFamily="Autography" fontSize="20px" color="#ff7700">
                   Kampus!
                 </Text>
                 <Text fontSize="10px"> account </Text>

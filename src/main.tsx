@@ -7,7 +7,9 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
   fonts: {
-    body: "'Mena Grotesk', sans-serif",
+    // body: "Mena Grotesk Medium",
+    fontfamily:
+      "Autography,'Mena Grotesk Regular', 'Mena Grotesk Bold' 'Mena Grotesk Book', 'Mena Grotesk Medium', 'Mena Grotesk Blk', 'Mena Grotesk SemiBold', sans-serif",
   },
 });
 const queryClient = new QueryClient();

@@ -6,6 +6,7 @@ import ForgotPasswordForm from "../forms/forgotPasswordForm";
 const ForgotPassword = () => {
   return (
     <Box
+      fontFamily="MGThin"
       pt={{ base: "15vw", md: "30vw", lg: "10vh", xl: "15vh" }}
       pl={{ base: "", md: "", lg: "10vw", xl: "10vw" }}
       width={{ base: "100vw", md: "100vw", lg: "100vw", xl: "100vw" }}

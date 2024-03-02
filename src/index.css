@@ -1,4 +1,41 @@
-@import url('https://fonts.cdnfonts.com/css/mena-grotesk?styles=105638');
+/* @import url('https://fonts.cdnfonts.com/css/mena-grotesk?styles=105638'); */
+
+@font-face {
+  font-family: MGRegular;
+  src: url(./fonts/MGRegular.otf);
+}
+@font-face {
+  font-family: MGBold;
+  src: url(./fonts/MGBold.otf);
+}
+@font-face {
+  font-family: MGBook;
+  src: url(./fonts/MGBook.otf);
+}
+@font-face {
+  font-family: MGBlack;
+  src: url(./fonts/MGBlack.otf);
+}
+@font-face {
+  font-family: MGSemi;
+  src: url(./fonts/MGSemi.otf);
+}
+@font-face {
+  font-family: Autography;
+  src: url(./fonts/Autography.otf);
+}
+@font-face {
+  font-family: MGMedium;
+  src: url(./fonts/MGMedium.otf);
+}
+@font-face {
+  font-family: MGThin;
+  src: url(./fonts/MGThin.otf);
+}
+@font-face {
+  font-family: MGLight;
+  src: url(./fonts/MGLight.otf);
+}
 
 
 

@@ -6,6 +6,7 @@ import photo from "../assets/regImage.png";
 const Register = () => {
   return (
     <Box
+      fontFamily="MGThin"
       width={{ base: "100vw", md: "100vw", lg: "100vw", xl: "100vw" }}
       height={{ base: "60vh", md: "100vh", lg: "70vh", xl: "70vh" }}
     >
@@ -21,9 +22,9 @@ const Register = () => {
             flexDir="column"
           >
             <Box>
-              <HStack gap="none">
-                <Text fontSize="10px"> Welcome to </Text>
-                <Text fontStyle="italic" color="#ff7700">
+              <HStack gap="2">
+                <Text fontSize="15px"> Welcome to </Text>
+                <Text fontSize="25px" fontFamily="Autography" color="#ff7700">
                   Kampus!
                 </Text>
               </HStack>

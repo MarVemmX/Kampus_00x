@@ -20,7 +20,7 @@ import KampusBlackLogo from "../assets/KampusBlack.png";
 const HomePage = () => {
   document.body.style.overflowX = "hidden";
   return (
-    <Box>
+    <Box fontFamily="MGThin">
       <NavBar />
       <Box
         position="relative"
@@ -47,8 +47,8 @@ const HomePage = () => {
             WELCOME TO KAMPUS
           </Text>
           <HStack
-            fontSize={{ base: "15px", md: "38px", lg: "45px", xl: "60px" }}
-            fontWeight="extrabold"
+            fontSize={{ base: "14px", md: "35px", lg: "45px", xl: "60px" }}
+            fontFamily="MGBold"
             gap="12px"
           >
             <Text>EMPOWER </Text>
