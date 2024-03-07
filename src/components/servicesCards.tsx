@@ -84,7 +84,13 @@ const ServicesCards = () => {
         h="200px"
       >
         <Stack>
-          <Image pl="10px" w="100px" src={money} />
+          <Image
+            pl="15px"
+            pt="5px"
+            w="100px"
+            src={money}
+            mixBlendMode="multiply"
+          />
           <Stack pl="5%" textAlign="start" align="center" w="90%">
             <Text fontWeight="bold" fontSize="20px">
               Task / Earn Section
@@ -107,7 +113,7 @@ const ServicesCards = () => {
         h="200px"
       >
         <Stack>
-          <Image pl="10px" w="100px" src={hands} />
+          <Image pl="10px" w="100px" src={hands} mixBlendMode="multiply" />
           <Stack pl="5%" textAlign="start" align="center" w="90%">
             <Text fontWeight="bold" fontSize="20px">
               Community / Blog

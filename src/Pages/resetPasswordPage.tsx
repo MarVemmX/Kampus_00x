@@ -35,7 +35,7 @@ const ResetPassword = () => {
             <Text textAlign="center">
               Update your Password, Don't forget it this time, but just incase
               you do;{" "}
-              <Text fontStyle="italic" color="#ff7700">
+              <Text fontFamily="Autography" fontSize="3xl" color="#ff7700">
                 Just Reset!
               </Text>
             </Text>

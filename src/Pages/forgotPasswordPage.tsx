@@ -13,7 +13,7 @@ const ForgotPassword = () => {
       height={{ base: "60vh", md: "100vh", lg: "100%", xl: "70vh" }}
     >
       <Box>
-        <Button>
+        <Button variant="ghost" ml="15px">
           <IoChevronBackOutline fontSize="35px" />
         </Button>
 

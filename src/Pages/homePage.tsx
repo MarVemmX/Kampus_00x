@@ -105,6 +105,7 @@ const HomePage = () => {
                 textAlign="center"
                 justifyContent="center"
                 fontSize="20px"
+                fontFamily="MGRegular"
               >
                 See Activities
               </Text>
@@ -133,7 +134,9 @@ const HomePage = () => {
               }}
               _active={{ transform: "scale(0.95)" }}
             >
-              <Text fontSize="20px">Continue</Text>
+              <Text fontFamily="MGRegular" fontSize="20px">
+                Continue
+              </Text>
               <Box marginLeft="5px" transition="margin-left 0.4s ease-in-out">
                 <IoArrowForwardCircleOutline
                   style={{

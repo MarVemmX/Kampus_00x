@@ -25,10 +25,10 @@ import HomePage from "./Pages/homePage";
 function App() {
   return (
     <>
-      <Register />
+      {/* <Register /> */}
       {/* <Login /> */}
       {/* <ResetPassword /> */}
-      {/* <HomePage /> */}
+      <HomePage />
     </>
 
     // <>

@@ -12,7 +12,7 @@ const Login = () => {
     >
       <HStack>
         <Box>
-          <Button>
+          <Button variant="ghost" ml="15px">
             <IoChevronBackOutline fontSize="35px" />
           </Button>
 

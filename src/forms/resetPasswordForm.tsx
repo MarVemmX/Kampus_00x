@@ -77,7 +77,9 @@ const ResetPasswordForm = () => {
               opacity: 0.5,
             }}
           >
-            <Text fontSize="15px">Reset Password</Text>
+            <Text fontSize="15px" fontFamily="MGThin">
+              Reset Password
+            </Text>
           </Button>
 
           {/* {isSubmitSuccessful && <RegToast />} */}

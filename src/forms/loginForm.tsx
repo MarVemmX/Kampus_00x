@@ -44,7 +44,7 @@ const LoginForm = () => {
       height={{ base: "80vh", md: "80vh", lg: "100vh", xl: "70vh" }}
     >
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Flex flexDirection="column" gap={3} p="10px">
+        <Flex fontFamily="MGThin" flexDirection="column" gap={3} p="10px">
           <Input
             background="rgba(255, 119, 0, 0.12)"
             h={16}
@@ -64,6 +64,7 @@ const LoginForm = () => {
           )}
 
           <Input
+            fontFamily="MGThin"
             background="rgba(255, 119, 0, 0.12)"
             h={16}
             border="none"
@@ -124,7 +125,9 @@ const LoginForm = () => {
                 opacity: 0.5,
               }}
             >
-              <Text fontSize="15px">Login</Text>
+              <Text fontSize="15px" fontFamily="MGThin">
+                Login
+              </Text>
             </Button>
           </Flex>
           {/* {isSubmitSuccessful && <RegToast />} */}
